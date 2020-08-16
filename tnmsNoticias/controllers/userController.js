@@ -7,6 +7,10 @@ let userController = {
     },
     'login' : function(req, res){
         res.render('login');
+    },
+    'editar' : function(req, res){
+        let idUser= req.params.idUser;
+        res.send(idUser);
     }
 
 
