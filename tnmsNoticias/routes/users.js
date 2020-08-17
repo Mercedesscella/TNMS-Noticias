@@ -11,7 +11,9 @@ router.get('/register', userController.register);
 router.post('/register', userController.create);
 router.get('/login', userController.login);
 router.get('/editar/:idUser', userController.editar);
-
+router.put('/editar', function(req, res){
+  res.send("FUI POR PUT")
+});
 
 
 module.exports = router;

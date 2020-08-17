@@ -1,0 +1,17 @@
+body{
+    font-family :'Fugaz+One';
+}
+
+.home, .carousel, .porfecha, .porranking{
+    margin:10px 0;
+    color: white;
+}
+.home{ background-color:blueviolet}
+.carousel{ background-color:lightcoral}
+.porfecha{ background-color:lightgoldenrodyellow;}
+.porranking{ background-color:yellow}
+
+h1 {
+    font-family:Fugaz_One ;
+    font-style: 50px;
+}

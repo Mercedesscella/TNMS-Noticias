@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+</head>
+<body>
+    <h1> Editar Usuario: <%=userEdit.name %></h1>
+    <form method="POST" action="/routes/users/Editar ?_method=PUT">
+        <label for="">Nombre</label>
+        <input type="text" name="nombre" value="<%= userEdit.name%>">
+
+        <input type="submit" value="Editar">
+
+    </form>
+</body>
+</html>
