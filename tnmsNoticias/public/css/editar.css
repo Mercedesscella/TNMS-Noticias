@@ -1,0 +1,8 @@
+.editar{
+    
+    padding: 60px;  /*espacio con la caja superior*/
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    top: 60px;  /*espacio con la caja inferior*/
+}

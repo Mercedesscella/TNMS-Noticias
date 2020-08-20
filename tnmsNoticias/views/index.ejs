@@ -3,7 +3,9 @@
   <head>
     <title>TNMS-Noticias</title>
     <meta charset="UTF-8">
+
     <link rel="stylesheet" href="../css/home.css ">
+    <link rel="stylesheet" href="../css/articles.css ">
     <link rel="stylesheet" href="https://fonts.google.com/specimen/Fugaz+One?preview.text=TNMS-Noticias&preview.text_type=custom&sidebar.open=true&selection.family=Fugaz+One">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&displany=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fugaz+One&displany=swap">
@@ -12,14 +14,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
     </head>
-  <body>
+  <body class="container">
     
-    <header>
+    <header class="df">
       <%- include('./partials/header.ejs') %>
     </header>
    
     
-    <div class="container">
+    <div class="df">
       <div class="row">
         <div class="col-sm-12">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -52,20 +54,41 @@
       </div>
     </div>
 
-    <div>
-      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, dignissimos, reiciendis repellat molestias labore distinctio sint quod ipsum quae deserunt hic alias ratione explicabo temporibus molestiae quam eius cumque? Vel.</h2>
-    </div>
-    <h3>lorem 200</h3>
+    <div class="seleccion">
+        <section>
+          <article class="art1">
+            <img src="../imagenes/4images.jpg" alt="">
+            <h2>titulo noticia 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias numquam assumenda ipsum beatae pariatur doloribus nam. Deleniti deserunt, perspiciatis dolor veritatis, modi beatae necessitatibus odit eaque ut quidem quae aspernatur.</p>
+          </article>
 
-    <div style="display:inline-block">
+          <article class="art2">
+            <img src="../imagenes/1images.png" alt="">
+            <h2>titulo noticia 2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, esse? Eum consequuntur, ut inventore, sit pariatur quibusdam non laudantium sequi sed corporis deserunt expedita quos! Tempora perferendis nihil cum perspiciatis!</p>
+          </article>
+
+          <article class="art3">
+            <img src="../imagenes/2images.png" alt="">
+            <h2>titulo noticia 3</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptatum delectus sit odit neque architecto, aliquam necessitatibus iusto nemo, vel amet exercitationem, blanditiis ad aspernatur nihil. Debitis, cupiditate. Modi, dolorum!</p>
+          </article>
+
+        </section> 
+    </div>
+
+</div>
+    
+
+    <div class="df" style="display:inline-block">
       <img style="margin:1px 4px 0;height:48px;width:48px" alt="Despejado, con intervalos nubosos" src="//ssl.gstatic.com/onebox/weather/48/sunny_s_cloudy.png" data-atf="1">
     </div>
 
     
     
-    <footer>
+    <footer class="df">
       <div class="footer">
-          <h3>cella mercedes</h3>
+        <%- include('./partials/footer.ejs') %>
       </div>
     </footer>
 

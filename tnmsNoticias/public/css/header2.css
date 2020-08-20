@@ -1,0 +1,43 @@
+header{
+    margin: 0;
+    font-family: 'Rubik';
+    width: 100%;
+    background-color: black;
+}
+
+#btn-menu{
+    display: none;
+}
+
+header label {
+    display: block;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border-right: 1px solid white;
+}
+
+header label:hover{
+    cursor: pointer;
+    background: gray;
+}
+
+.mymenu ul{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+.mymenu ul li{
+    flex-grow: 1;
+}
+
+.mymenu ul li a {
+    display: block;
+    padding: 15 px 20px;
+    color: white;
+    text-decoration: none;
+}
+.mymenu li:hover {
+    background: gray;
+}

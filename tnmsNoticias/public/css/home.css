@@ -1,21 +1,69 @@
+*{
+    box-sizing: border-box;
+}
+
+.barramenu{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    top: 50px;
+    margin-bottom: 50px;
+    list-style: none;
+
+}
+
+
+body {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+
+}
+.titular h1{
+    font-family:  'Fugaz One';
+}
+
+
 section article{
-    background-color: lightcoral;
+    
     float: left;
     padding:10px;
     width: 25%;
+    margin-bottom: 30px;
+
 }
 section{
-    background-color: lightskyblue;
-    padding: 20px;
-    width: 80%;
+
+    padding: 60px;  /*espacio con la caja superior*/
+    width: 100%;
     margin: auto;
     overflow: hidden;
-    position: fixed; 
-    top: 5px;
+    top: 20px;  /*espacio con la caja inferior*/
+}
+article img{
+    width: 100%;
+}
+article h2{
+    margin-top:8px ;
 }
 /* que mi barra se quede en el lugar */ 
 footer{
     background-color: black;
     width: 100%;
     text-decoration-color: rgb(255, 255, 255);
+}
+.titular{
+    border-color: black;
+}
+article col{
+    background-color: black;
+}
+
+article{
+    flex-grow: 1;
+}
+
+.barramenu{
+    background-color: black;
+    text: white;
 }
