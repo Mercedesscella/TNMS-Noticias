@@ -1,3 +1,6 @@
+let db = require('../database/models/index.js');
+let sequelize = db.sequelize;
+
 let articlesController = {
     'cargar':function(req, res){
         res.render('cargaArticles');
@@ -14,7 +17,14 @@ let articlesController = {
     'comentar' : function(req, res){
         res.render('comentar');
     },
+
     'listar' : function(req, res){
+            sequelize.query( "SELECT * FROM articles").
+                then(function(resultados){
+                    let articulos = resultados[0];
+                    res.send(articulos)
+                })
+
         let articles=[
             {id: 1, name:'Resolicion de Fernandez'},
             {id: 2, name:'Animales sueltos'},
@@ -22,7 +32,7 @@ let articlesController = {
             {id: 4, name:'Comer mas saludable'},
             {id: 5, name:'Vuelve el cine ?'}
         ]
-        res.render('listarArt',{ 'articles': articles});
+        //res.render('listarArt',{ 'articles': articles});
     }
 
 };
