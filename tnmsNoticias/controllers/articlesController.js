@@ -1,4 +1,4 @@
-let db = require('../database/models/index.js');
+let db = require('../database/models');
 let sequelize = db.sequelize;
 
 let articlesController = {
@@ -19,10 +19,10 @@ let articlesController = {
     },
 
     'listar' : function(req, res){
-            sequelize.query( "SELECT * FROM articles").
-                then(function(resultados){
-                    let articulos = resultados[0];
-                    res.send(articulos)
+
+            db.Articles.finsAll().
+                then(function(articles){
+                    res.render("listarArt", {articulos: articulos})
                 })
 
         let articles=[
