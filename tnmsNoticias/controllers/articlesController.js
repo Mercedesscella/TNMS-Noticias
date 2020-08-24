@@ -33,6 +33,13 @@ let articlesController = {
             {id: 5, name:'Vuelve el cine ?'}
         ]
         //res.render('listarArt',{ 'articles': articles});
+    },
+    //Estoy detallando la noticia que quiero ver a continuacion.
+    'detail' : function(req, res){
+        db.Articles.findByPk(req.params.id)
+            .then(function(article){
+                res.render("detalleArticle", {article: article})
+            })
     }
 
 };

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TNMS-Noticias</title>
+    <title>TNMS-Noticias - <p>  <%= article.title%> </p> </title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/home.css ">
     <link rel="stylesheet" href="../css/articles.css ">
@@ -23,14 +23,21 @@
 
       <h1>Todas las Noticias del dia</h1>
 
-        <form method=""   action="" >
-          <ul>
-            <% for (let i=0; i<articles.length; i++ ){ %>
-              <li>
-                  <a href="/articles/<%= articles[i].id%>"> <%= articles[i].title %> </a>
-              </li>
-          <% } %>
-          </ul>  
+        <form method="GET"   action="" >
+          <h2> <%= article.title%> </h2>
+          <p>  <%= article.excerpt%> </p> 
+          <p>  <%= article.content%> </p> 
+          <p>  <%= article.photo%> </p> 
+        </form>
+    </div>
+    <div> 
+        <form method="POST" action="">
+            <label for="">Dejanos tu puntuacion para esta noticia.</label>
+            <% for(let i =0, i<5, i++ ){%>
+                <label for=""> [i+1] </label>
+                <input type="radio" name="raiting" checked value="[i+1]" ></br>
+            <% }%>            
+            <button type="button" id="btn-radio" >ENVIAR</button>
         </form>
     </div>
     
@@ -49,5 +56,3 @@
   </body>
   
 </html>
-
-

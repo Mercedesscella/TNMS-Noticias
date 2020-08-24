@@ -4,7 +4,7 @@ module.exports = {
     "username": "DESKTOP-LJE9D9\magri",  // pruebo otro usuario
     "password": null,
     "database": "tnms_noticias",
-    "host": "127.0.0.1",
+    "host": "127.0.1.1",
     //"host": "192.168.100.1",
     //"host": "localhost",
     "dialect": "mysql"
