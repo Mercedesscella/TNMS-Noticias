@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TNMS-Noticias</title>
+    <title>TNMS-Noticias - Ultimo Momento</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/home.css ">
     <link rel="stylesheet" href="../css/articles.css ">
@@ -20,20 +20,17 @@
     </header>
     
     <div class="container">
-        <form method="post" action="" >
-            <label for="id">EL  TITULO</label>
-            <input type="text" name="title" id="id"> <br>
-            <label for="id">SUB TITULO</label>
-            <input type="text" name="excerpt" id="id"><br>
-            <label for="id">DESARROLLA LA NOTICIA</label>
-            <input type="text" name="content" id="id"><br>
-            <label for="id">LA FOTO</label>
-            <label for="id">GENERO</label>
-            <input type="radius" name="caterory_id">
-            
-            <input type="text" name="foto" id="id"><br>
-            <input type="submit" value="CARGAR NOTICIA">
-            
+
+      <h1>NOTICIAS ULTIMO MOMENTO</h1>
+
+        <form method="get"   action="" >
+          <ul>
+            <% for (let i=0; i<articles.length; i++ ){ %>
+              <li>
+                  <a href="/articles/<%= articles[i].id%>"> <%= articles[i].title %> </a>
+              </li>
+          <% } %>
+          </ul>  
         </form>
     </div>
     
@@ -52,4 +49,5 @@
   </body>
   
 </html>
+
 

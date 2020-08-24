@@ -74,6 +74,14 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt voluptatum delectus sit odit neque architecto, aliquam necessitatibus iusto nemo, vel amet exercitationem, blanditiis ad aspernatur nihil. Debitis, cupiditate. Modi, dolorum!</p>
           </article>
 
+
+          
+            <% for (let i=0; i<articles.length; i++ ){ %>
+              <article>
+                <a href="/articles/<%= articles[i].id%>"> <%= articles[i].title %> </a>
+             </article>
+          <% } %>
+            
         </section> 
     </div>
 

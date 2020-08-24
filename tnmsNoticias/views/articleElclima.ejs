@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TNMS-Noticias - Clima</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/home.css ">
+    <link rel="stylesheet" href="../css/articles.css ">
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Fugaz+One?preview.text=TNMS-Noticias&preview.text_type=custom&sidebar.open=true&selection.family=Fugaz+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&displany=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fugaz+One&displany=swap">
+
+    <meta name="viewport" content="whidth=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    </head>
+  <body class="container">
+    
+    <header class="df">
+      <%- include('./partials/header.ejs') %>
+    </header>
+    
+    <div class="container">
+
+      <h1>NOTICIAS CLIMA</h1>
+
+        <form method="get"   action="" >
+          <ul>
+            <% for (let i=0; i<articles.length; i++ ){ %>
+              <li>
+                  <a href="/articles/<%= articles[i].id%>"> <%= articles[i].title %> </a>
+              </li>
+          <% } %>
+          </ul>  
+        </form>
+    </div>
+    
