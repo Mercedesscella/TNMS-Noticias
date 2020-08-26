@@ -18,47 +18,34 @@
     <header class="df">
       <%- include('./partials/header.ejs') %>
     </header>
-   
+    
     <div class="container">
-        <form method="POST" action="/users/register" >
-        
-            <div>
-              <label for="id">Nombre de Usuario: </label>
-              <input type="text" id="id" name="name">
-            </div> 
-            <div>
-                <label for="id">Primer Nombre: </label>
-                <input type="text" id="id" name="first_name">
-            </div>
-            <div>
-                <label for="id">Apellido: </label>
-                <input type="text" id="id" name="last_name">
-            </div>
-            <div>
-                <label for="id">Email: </label>
-                <input type="email" id="id" name="email">
-            </div>
-            <div>
-                <label for="id">Contraseña: </label>
-                <input type="password" id="id" name="password">
-            </div>
-            <div>
-              <label for="id">Tipo de usuario, 1 para usuario 2 para periodista.</label>
-              <input type="password" id="id" name="type">
-            </div>
-            <div>
-              <label for="id">ingresa tu foto: </label>
-              <input type="password" id="id" name="password">
-            </div>
+        <form method="post" action="articles/modificar/<%=article.id %> " >
+            <label for="id">EL  TITULO</label>
+            <input type="text" name="title" id="id" value="<%=article.title %>" > <br>
+            <label for="id">SUB TITULO</label>
+            <input type="text" name="excerpt" id="id" value="<%=article.excerpt %>"><br>
+            <label for="id">DESARROLLA LA NOTICIA</label>
+            <input type="text" name="content" id="id" value="<%=article.content%>"><br>
+            <label for="id">LA FOTO</label>
+            <input type="text" name="foto" id="id" value="<%=article.photo_id>"><br>
 
-
-            <div>
-                <input type="submit" value="Registrarme">
-                <a href="OLVIDE MI CONTRASEÑA"></a>
-            </div>
+            <label for="id">GENERO</label>
+            <input type="radius" name="caterory_id" value="<%=article.category_id%>">
+            
+            
         </form>
+        
+        <form method="POST" action="articles/submit/<%=article.id%">
+            <button> MODIFICAR </button> 
+        </form>
+        <form method="POST" action="articles/borrar/<%=article.id%">
+            <button>BORRAR ESTE ARTICULO</button> 
+        </form>
+
     </div>
     
+
     
     <footer class="df">
       <div class="footer">
@@ -73,8 +60,3 @@
   </body>
   
 </html>
-
-
-
-
-   

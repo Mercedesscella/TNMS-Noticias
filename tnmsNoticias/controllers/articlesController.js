@@ -16,41 +16,83 @@ let articlesController = {
         res.redirect("listarArt.ejs");
     },
     'modificar' : function(req, res){
-        res.render('modificar');
+        db.Articles.findByPk(req.params.ad)
+        .then(function (user){
+            res.render("editarArticulo", {article: article})
+        })
     },
+    //modificar yguardar los cambios En ARTICLE
+    'update' : function(req, res){
+        db.Articles.update({
+            title: req.body.title,
+            excerpt: req.body.excerpt,
+            content: req.body.content,
+            created_at : req.body.created_at,//dia de hoy
+            category_id: req.body.category_id
+        },{
+            where:{
+                id: req.params.id
+            }
+        })
+        res.redirect("/articles/modificar" + req.params.id)
+    },
+
+
     'borrar' : function(req, res){
-        res.render('borrar');
+        db.Articles.destroy({
+            where:{
+                id: req.params.id
+            }
+        })
+
+        res.redirect("/article/listar");
     },
     'comentar' : function(req, res){
         res.render('comentar');
     },
 
     'listar' : function(req, res){
-
-            db.Articles.finsAll({
-                order: [
-                    ["updated_At", "DESC"]
-                ]
-            }).
-                then(function(articles){
-                    res.render("listarArt", {articulos: articulos})
+                sequelize.query("SELECT * FROM articles")
+                .then(function(resultados){
+                    let articulos= resultados[0];
+                    res.send(articulos);
                 })
 
-        let articles=[
+
+
+
+           /* db.Articles.findAll({
+                /*order: [
+                    ["updated_At", "DESC"]
+                ],
+                include:[{
+                    association:"categories",
+                    association: "photos"
+                }]
+                
+            }).
+                then(function(articles){
+                    res.render("listarArt", {articles : articles })
+                })
+            */
+        /*let articles=[
             {id: 1, name:'Resolicion de Fernandez'},
             {id: 2, name:'Animales sueltos'},
             {id: 3, name:'Tormenta de nieve'},
             {id: 4, name:'Comer mas saludable'},
             {id: 5, name:'Vuelve el cine ?'}
         ]
+        */
         //res.render('listarArt',{ 'articles': articles});
     },
     //Estoy detallando la noticia que quiero ver a continuacion.
-    'detail' : function(req, res){
-        db.Articles.findByPk(req.params.id)
+        /*'detail' : function(req, res){
+             
+            db.Articles.findByPk(req.params.id)
             .then(function(article){
                 res.render("detalleArticle", {article: article})
             })
+          
     },
     //acceder a los articulos por categoria:
     'ultimomomento':function(req, res){
@@ -118,6 +160,6 @@ let articlesController = {
                 res.render("articleElclima", {article: article})
             })
     }
-
+  */
 };
 module.exports = articlesController;

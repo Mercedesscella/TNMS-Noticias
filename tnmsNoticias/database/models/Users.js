@@ -9,32 +9,32 @@ module.exports = (sequelize, dataTypes)=>{
             autoIncrement: true
         },
         name:{
-            dataTypes: STRING
+            type: dataTypes.STRING
         },
         first_name:{
-            dataTypes: STRING
+            type: dataTypes.STRING
         },
         last_name:{
-            dataTypes: STRING
+            type: dataTypes.STRING
         },
         avatar:{
-            dataTypes: STRING  
+            type: dataTypes.STRING  
         },
 
         email:{
-            dataTypes: STRING
+            type: dataTypes.STRING
         },
         password:{
-            dataTypes: STRING
+            type: dataTypes.STRING
         },
         type:{
-            dataTypes: STRING
+            type: dataTypes.STRING
         },
         created_at:{
-            dataTypes: TIME
+            type: dataTypes.TIME
         },
         updated_at:{
-            dataTypes: TIME
+            type: dataTypes.TIME
         }
     };
     config ={

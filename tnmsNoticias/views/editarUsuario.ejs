@@ -24,38 +24,39 @@
         
             <div>
               <label for="id">Nombre de Usuario: </label>
-              <input type="text" id="id" name="name">
+              <input type="text" id="id" name="name" value="<%= user.name%>">
             </div> 
             <div>
                 <label for="id">Primer Nombre: </label>
-                <input type="text" id="id" name="first_name">
+                <input type="text" id="id" name="first_name" value="<%= user.fist_name%>">
             </div>
             <div>
                 <label for="id">Apellido: </label>
-                <input type="text" id="id" name="last_name">
+                <input type="text" id="id" name="last_name" value="<%= user.last_name%>">
             </div>
             <div>
                 <label for="id">Email: </label>
-                <input type="email" id="id" name="email">
+                <input type="email" id="id" name="email" value="<%= user.email%>">
             </div>
             <div>
                 <label for="id">Contraseña: </label>
-                <input type="password" id="id" name="password">
+                <input type="password" id="id" name="password" value="<%= user.password %>">
             </div>
             <div>
               <label for="id">Tipo de usuario, 1 para usuario 2 para periodista.</label>
-              <input type="password" id="id" name="type">
+              <input type="password" id="id" name="type"  value="<%= user.type%>">
             </div>
             <div>
               <label for="id">ingresa tu foto: </label>
-              <input type="password" id="id" name="password">
+              <input type="password" id="id" name="password" value="<%= user.id_fhoto%>">
             </div>
 
-
-            <div>
-                <input type="submit" value="Registrarme">
-                <a href="OLVIDE MI CONTRASEÑA"></a>
-            </div>
+        </form>
+        <form method="POST" action="users/submit/<%=user.id%">
+          <button> MODIFICAR </button> 
+        </form>
+        <form method="POST" action="users/borrar/<%=user.id%">
+            <button>BORRAR ESTE USUARIO</button> 
         </form>
     </div>
     
@@ -75,6 +76,3 @@
 </html>
 
 
-
-
-   

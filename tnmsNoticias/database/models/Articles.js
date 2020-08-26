@@ -1,7 +1,9 @@
 //const config = require("../config/config");
+//const { TEXT } = require("sequelize/types");
+//const Categories = require("./Categories");
 
 module.exports = (sequelize, dataTypes)=>{
-    let alias ="";
+    let alias ="articles";
     let cols = {
         id:{
             type: dataTypes.INTEGER,
@@ -9,19 +11,19 @@ module.exports = (sequelize, dataTypes)=>{
             autoIncrement: true
         },
         title:{
-            dataTypes: STRING
+            type: dataTypes.STRING
         },
         excerpt:{
-            dataTypes: STRING
+            type: dataTypes.STRING
         },
         content:{
-            dataTypes: STRING
+            type: dataTypes.STRING
         },
         created_at:{
-            dataTypes: TIME
+            type: dataTypes.TIME
         },
         updated_at:{
-            dataTypes: TIME
+            type: dataTypes.TIME
         }
     };
     config ={
@@ -30,5 +32,20 @@ module.exports = (sequelize, dataTypes)=>{
     };
 
     const Article = sequelize.define(alias, cols, config);
+
+    /*Article.associate = function(models){
+        Article.belongsTo(models.Categories, {
+            as:"categories",
+            foreingKey: "category_id"
+        })
+    }
+
+    Article.associate = function(models){
+        Article.hasMany(models.Photos,{
+            as: "photos",
+            foreingKey:"articles_id"
+        })
+    }
+    */
     return Article;
 }

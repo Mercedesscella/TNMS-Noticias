@@ -1,7 +1,7 @@
 //const config = require("../config/config");
 
 module.exports = (sequelize, dataTypes)=>{
-    let alias ="";
+    let alias ="photos";
     let cols = {
         id:{
             type: dataTypes.INTEGER,
@@ -9,13 +9,13 @@ module.exports = (sequelize, dataTypes)=>{
             autoIncrement: true
         },
         file_path:{
-            dataTypes: STRING
+            type: dataTypes.STRING
         },
         created_at:{
-            dataTypes: TIME
+            type: dataTypes.TIME
         },
         updated_at:{
-            dataTypes: TIME
+            type: dataTypes.TIME
         }
     };
     config ={
@@ -24,5 +24,14 @@ module.exports = (sequelize, dataTypes)=>{
     };
 
     const Photo = sequelize.define(alias, cols, config);
+    /*
+    Photo.associate = function(models){
+        Photo.belongsTo(models.Articles, {
+            as:"articles",
+            foreingKey: "articles_id"
+        })
+    }
+    */
+
     return Photo;
 }

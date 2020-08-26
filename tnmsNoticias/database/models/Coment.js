@@ -9,16 +9,16 @@ module.exports = (sequelize, dataTypes)=>{
             autoIncrement: true
         },
         rating:{
-            dataTypes: INTEGER
+            type: dataTypes.INTEGER
         },
         content:{
-            dataTypes: STRING
+            type: dataTypes.STRING
         },
         created_at:{
-            dataTypes: TIME
+            type: dataTypes.TIME
         },
         updated_at:{
-            dataTypes: TIME
+            type: dataTypes.TIME
         }
     };
     config ={
