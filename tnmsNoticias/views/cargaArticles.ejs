@@ -18,6 +18,16 @@
     <header class="df">
       <%- include('./partials/header.ejs') %>
     </header>
+
+    <% if( typeof errors !='undefined'){%>
+      <ul>
+        <% for (let i=0; i< errors.length; i++){%>
+          <li>
+            <%=errors[i].msg%>
+          </li>
+        <%}%>
+      </ul>
+    <% } &>
     
     <div class="container">
         <form method="post" action="articles/cargar" >

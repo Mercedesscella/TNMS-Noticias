@@ -20,6 +20,16 @@
     </header>
    
     <div class="container">
+
+      <% if( typeof errors !='undefined'){%>
+          <ul>
+            <% for (let i=0; i< errors.length; i++){%>
+              <li>
+                <%=errors[i].msg%>
+              </li>
+            <%}%>
+          </ul>
+        <% } &>
         <form method="POST" action="/users/register" >
         
             <div>

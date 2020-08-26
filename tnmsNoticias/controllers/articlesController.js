@@ -6,7 +6,11 @@ let articlesController = {
         res.render('cargaArticles');
     },
     'create':function(req, res){  //post de carga de mis noticias desarrollar
-       db.Articles.create({
+        
+        let errors = validationResult(req);
+        if (errors. isEmpty){
+      
+        db.Articles.create({
            title: req.body.title,
            excerpt: req.body.excerpt,
            content: req.body.content,
@@ -14,6 +18,9 @@ let articlesController = {
            category_id: req.body.category_id
        })
         res.redirect("listarArt.ejs");
+    }else{
+        return  res.renser('register', {errors:errors.errors});
+    }
     },
     'modificar' : function(req, res){
         db.Articles.findByPk(req.params.ad)
